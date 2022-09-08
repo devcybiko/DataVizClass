@@ -62,12 +62,12 @@ As before, I combine the `user_choice` and the `computer_choice` as an index int
 Notice, that to print the reason for the `computer_choice` win, the `combo` has to be reversed. There is a programmatic way to do it, but it's [not a pretty sight](https://stackoverflow.com/questions/931092/reverse-a-string-in-python). In this case it was sufficient to create a separate variable `obmoc` with the concatenation reversed.
 
 ```python
-    combo = user_choice + computer_choice ### use this as an index into the 'reasons' dictionary
-    obmoc = computer_choice + user_choice ### 'obmoc' is 'combo' reversed (for when the computer wins)
-    if user_choice == computer_choice: ### check for a tie first...
+    combo = user_choice + computer_choice 
+    obmoc = computer_choice + user_choice 
+    if user_choice == computer_choice: 
         print(f"it's a draw: we both picked {names[user_choice]}\n")
-    elif combo in reasons: ### if 
-        print(f"You won! {reasons[combo]}\n") ### print the reason for the user's win from the 'reasons' dictionary
+    elif combo in reasons:
+        print(f"You won! {reasons[combo]}\n") 
     else:
-        print(f"You lost! {reasons[obmoc]}\n") ### note: using 'obmoc' because we need the key for when the computer wins
+        print(f"You lost! {reasons[obmoc]}\n")
 ```
