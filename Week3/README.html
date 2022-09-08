@@ -38,11 +38,51 @@
 <p>Here, the <code>reasons</code> dictionary has a “key” that is all the winning combinations. And the “value” is the reason for the win.</p>
 <p>As before, I combine the <code>user_choice</code> and the <code>computer_choice</code> as an index into the <code>reasons</code> dictionary. If <code>combo in reasons</code> then I know the user has won. AND, I can print the exact reason (as explained by Sheldon) for the win.</p>
 <p>Notice, that to print the reason for the <code>computer_choice</code> win, the <code>combo</code> has to be reversed. There is a programmatic way to do it, but it’s <a href="https://stackoverflow.com/questions/931092/reverse-a-string-in-python">not a pretty sight</a>. In this case it was sufficient to create a separate variable <code>obmoc</code> with the concatenation reversed.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    combo <span class="op">=</span> user_choice <span class="op">+</span> computer_choice <span class="co">### use this as an index into the &#39;reasons&#39; dictionary</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    obmoc <span class="op">=</span> computer_choice <span class="op">+</span> user_choice <span class="co">### &#39;obmoc&#39; is &#39;combo&#39; reversed (for when the computer wins)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_choice <span class="op">==</span> computer_choice: <span class="co">### check for a tie first...</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    combo <span class="op">=</span> user_choice <span class="op">+</span> computer_choice </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    obmoc <span class="op">=</span> computer_choice <span class="op">+</span> user_choice </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_choice <span class="op">==</span> computer_choice: </span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;it&#39;s a draw: we both picked </span><span class="sc">{</span>names[user_choice]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> combo <span class="kw">in</span> reasons: <span class="co">### if </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;You won! </span><span class="sc">{</span>reasons[combo]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>) <span class="co">### print the reason for the user&#39;s win from the &#39;reasons&#39; dictionary</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> combo <span class="kw">in</span> reasons:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;You won! </span><span class="sc">{</span>reasons[combo]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>) </span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;You lost! </span><span class="sc">{</span>reasons[obmoc]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>) <span class="co">### note: using &#39;obmoc&#39; because we need the key for when the computer wins</span></span></code></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;You lost! </span><span class="sc">{</span>reasons[obmoc]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="game-play">Game Play</h2>
+<pre><code>{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}r
+You picked Rock, I picked Spock
+You lost! Spock vaporizes Rock
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}p
+You picked Paper, I picked Scissors
+You lost! Scissors cuts Paper
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}l
+You picked Lizard, I picked Paper
+You won! Lizard eats Paper
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}s
+You picked Scissors, I picked Rock
+You lost! As it always has, Rock crushes Scissors.
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}x
+You picked Spock, I picked Paper
+You lost! Paper disproves Spock
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}r
+You picked Rock, I picked Spock
+You lost! Spock vaporizes Rock
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}p
+You picked Paper, I picked Paper
+it&#39;s a draw: we both picked Paper
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}l
+You picked Lizard, I picked Scissors
+You lost! Scissors decapitates Lizard
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}s
+You picked Scissors, I picked Paper
+You won! Scissors cuts Paper
+
+{&#39;r&#39;: &#39;Rock&#39;, &#39;p&#39;: &#39;Paper&#39;, &#39;s&#39;: &#39;Scissors&#39;, &#39;l&#39;: &#39;Lizard&#39;, &#39;x&#39;: &#39;Spock&#39;}x
+You picked Spock, I picked Rock
+You won! Spock vaporizes Rock</code></pre>

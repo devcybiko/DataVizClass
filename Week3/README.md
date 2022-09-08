@@ -71,3 +71,47 @@ Notice, that to print the reason for the `computer_choice` win, the `combo` has 
     else:
         print(f"You lost! {reasons[obmoc]}\n")
 ```
+
+## Game Play
+
+```
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}r
+You picked Rock, I picked Spock
+You lost! Spock vaporizes Rock
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}p
+You picked Paper, I picked Scissors
+You lost! Scissors cuts Paper
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}l
+You picked Lizard, I picked Paper
+You won! Lizard eats Paper
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}s
+You picked Scissors, I picked Rock
+You lost! As it always has, Rock crushes Scissors.
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}x
+You picked Spock, I picked Paper
+You lost! Paper disproves Spock
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}r
+You picked Rock, I picked Spock
+You lost! Spock vaporizes Rock
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}p
+You picked Paper, I picked Paper
+it's a draw: we both picked Paper
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}l
+You picked Lizard, I picked Scissors
+You lost! Scissors decapitates Lizard
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}s
+You picked Scissors, I picked Paper
+You won! Scissors cuts Paper
+
+{'r': 'Rock', 'p': 'Paper', 's': 'Scissors', 'l': 'Lizard', 'x': 'Spock'}x
+You picked Spock, I picked Rock
+You won! Spock vaporizes Rock
+```
