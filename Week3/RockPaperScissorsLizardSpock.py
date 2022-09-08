@@ -18,8 +18,6 @@ while True:
         "xr": "Spock vaporizes Rock",
         "rs": "As it always has, Rock crushes Scissors."
     }
-#
-# for rock, paper, scissors, lizard, spock...
     user_choice = input(names)
     computer_choice = random.choice(options);
     if user_choice not in options:
