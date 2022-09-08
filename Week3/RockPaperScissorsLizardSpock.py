@@ -30,7 +30,7 @@ while True:
     obmoc = computer_choice + user_choice ### 'obmoc' is 'combo' reversed (for when the computer wins)
     if user_choice == computer_choice: ### check for a tie first...
         print(f"it's a draw: we both picked {names[user_choice]}\n")
-    elif combo in reasons: ### if 
+    elif combo in reasons: 
         print(f"You won! {reasons[combo]}\n") ### print the reason for the user's win from the 'reasons' dictionary
     else:
         print(f"You lost! {reasons[obmoc]}\n") ### note: using 'obmoc' because we need the key for when the computer wins
