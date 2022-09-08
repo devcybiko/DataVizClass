@@ -15,7 +15,6 @@ Then, I combine the `user_choice` and the `computer_choice` to make a unique str
 * NOTE: I also know that if it's not a tie or a win for the user, it must be a win for the computer (or a loss for the user).
 
 ```python
-    ...
     combo = user_choice + computer_choice
     if user_choice == computer_choice:
         print(f"it's a draw: you both picked {user_choice}\n")
